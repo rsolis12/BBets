@@ -132,10 +132,10 @@ plot(sorted_fair_low, type = "l", xlab = "Index", ylab = "Value",
 ```{r}
 favstats(sorted_fair_low)
 ```
-The plot will show the relationship between the class size and Professor Brownlow's expected profits. The class size for which the expected profits are closest to zero would be the size that makes the 2:1 bet fair. You can check the plot to find the approximate class size that fulfills this condition.
+The mean of is the average expected profit across all the simulations, indicating that, on average, Professor Brownlow tends to gain  money with this 2:1 bet. The standard deviation of measures the variability or dispersion of the expected profits around the mean. Overall, the results suggest that Professor Brownlow's betting profits with the 2:1 bet tend to be positive on average, meaning he loses more money than he wins. The simulation provides insight into the potential range of his profits for different class sizes, and it confirms that the bet is not fair since the average expected profit is negative.
 
 
 # Discussion and Conclusion
 
-<!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!--> 
+<!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!--> If he consistently makes money (expected profit is positive), he can decrease the odds he offers to balance his expected profits around zero.to find the fair odds (payout ratio), we can set the expected profit to zero and solve for the odds using the BrLw function. Let's update the function to include an odds parameter and then use numerical optimization techniques like the optimize function to find the fair odds.
 
