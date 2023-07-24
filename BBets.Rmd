@@ -89,7 +89,7 @@ the average earning of brownlow bets are 285.31. 95% of the time. this 95% confi
 ```{r}
 b_low <- array(100)
 for (i in 1:100) {
-  b_low[i] <- BrLw(odds=4.4)
+  b_low[i] <- BrLw(odds=4.36)
 }
 
 ```
@@ -104,7 +104,9 @@ favstats(sorted_b_low)
 ```
 
 <!--Decide on your methods:  In this section explain the approach you will take to attack the issue --- how will you decide on a likely estimate of professor Brownlow's earnings or losses after 637 bets. Also explain how you construct a 95% confidence interval about your estimate of his winnings !-->
+the means finding the odds at which the amount he wins on average is equal to the amount he loses, resulting in zero overall profit.
 
+In the provided R code, the BrLw function is modified to take an additional argument odds, which represents the odds offered by Professor Brownlow for the bet. The function then calculates the expected profit based on the given odds.
 
 
 
@@ -113,14 +115,27 @@ favstats(sorted_b_low)
 
 <!--Explain and display the results of your method of coming up with the estimate of professor Brownlows betting profits!-->
 
+```{r}
+fair_low <- array(100)
+for (i in 1:100) {
+  fair_low[i] <- BrLw(numClass = 28)
+}
+
+```
+```{r}
+sorted_fair_low <- sort(fair_low)
+plot(sorted_fair_low, type = "l", xlab = "Index", ylab = "Value",
+     main = "Line Plot of Brownlow Numerical Vector")
+```
 
 
-
-
-
+```{r}
+favstats(sorted_fair_low)
+```
+The plot will show the relationship between the class size and Professor Brownlow's expected profits. The class size for which the expected profits are closest to zero would be the size that makes the 2:1 bet fair. You can check the plot to find the approximate class size that fulfills this condition.
 
 
 # Discussion and Conclusion
 
-<!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!-->
+<!--Discussion and conclusion here.  If professor Brownlow is consistantly making or losing money how could he change his payout so that his profits center on zero?  Also discuss what size his class should be in order to have his current scheme balance at zero profit.!--> 
 
